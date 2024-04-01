@@ -50,7 +50,16 @@ namespace ejercicio1Global.Servicios
 
             while (!cerrarMenu)
             {
+                try
+                {
 
+                }catch (Exception e)
+                {
+                    Console.WriteLine("Error al iniciar el menu:  "+e.Message);
+                }
+                
+
+                
             }
         }
     }
