@@ -36,6 +36,10 @@ namespace ejercicio1Global.Controladores
                             Console.WriteLine(biblioteca.ToString()); 
                         }
                         break;
+
+                    case 3:
+                        Console.WriteLine("[INFO] se accedera al menu de la biblioteca");
+                        break;
                 }
             }
         }
