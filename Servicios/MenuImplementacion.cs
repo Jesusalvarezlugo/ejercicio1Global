@@ -47,11 +47,33 @@ namespace ejercicio1Global.Servicios
         {
             int opcionS;
             bool cerrarMenu = false;
+            BibliotecaInterfaz bi = new BibliotecaImplementacion();
 
             while (!cerrarMenu)
             {
                 try
                 {
+                    opcionS=mostrarMenuYSeleccionPrin();
+
+                    switch (opcionS)
+                    {
+                        case 0:
+                            Console.WriteLine("[INFO] se cerrara la aplicacion.");
+                            break;
+
+                        case 1:
+                            Console.WriteLine("[INFO] se creara una biblioteca.");
+                            bi.crearBiblioteca(listaAntiguaBib);
+                            break;
+
+                        case 2:
+                            Console.WriteLine("[INFO] se veran las bibliotecas ");
+                            foreach(BibliotecaDto biblioteca in listaAntiguaBib)
+                            {
+                                Console.WriteLine(biblioteca.ToString());
+                            }
+                            break;
+                    }
 
                 }catch (Exception e)
                 {

@@ -33,5 +33,15 @@ namespace ejercicio1Global.Dtos
             this.nombreBiblioteca = nombreBiblioteca;
             this.direccion = direccion;
         }
+
+        //Metodo ToString
+
+        override
+            public string ToString()
+        {
+            string texto = "ID: "+this.IdBiblioteca+"\n Nombre: "+this.NombreBiblioteca+"\n Direccion: "+this.Direccion;
+
+            return texto;
+        }
     }
 }
