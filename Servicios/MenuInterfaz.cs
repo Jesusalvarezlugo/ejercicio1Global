@@ -14,5 +14,7 @@ namespace ejercicio1Global.Servicios
         public int mostrarMenuYseleccionSec();
 
         public void menuPrin(List<BibliotecaDto> listaAntiguaBib);
+
+        public void menuBiblioteca(List<ClienteDto> listaClienteAnt, List<LibroDto> listaLibroAnt, List<PrestamoDto> listaPrestamoAnt);
     }
 }

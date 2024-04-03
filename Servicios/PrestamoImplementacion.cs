@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ejercicio1Global.Servicios
 {
-    internal class PrestamoImplementacion
+    internal class PrestamoImplementacion:PrestamoInterfaz
     {
     }
 }

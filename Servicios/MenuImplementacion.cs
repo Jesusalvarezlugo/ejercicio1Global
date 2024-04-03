@@ -19,7 +19,7 @@ namespace ejercicio1Global.Servicios
             Console.WriteLine("0. Salir de la aplicacion");
             Console.WriteLine("1. Crear Biblioteca");
             Console.WriteLine("2. Ver Bibliotecas");
-            Console.WriteLine("3. Acceder a la Biblioteca especifica");
+            Console.WriteLine("3. Acceder al menu de una biblioteca");
             Console.WriteLine("########################################");
             Console.WriteLine("Elija una opcion: ");
             opcion = Console.ReadKey(true).KeyChar - ('0');
@@ -59,6 +59,7 @@ namespace ejercicio1Global.Servicios
                     {
                         case 0:
                             Console.WriteLine("[INFO] se cerrara la aplicacion.");
+                            cerrarMenu = true;
                             break;
 
                         case 1:
@@ -82,6 +83,25 @@ namespace ejercicio1Global.Servicios
                 
 
                 
+            }
+        }
+
+        public void menuBiblioteca(List<ClienteDto> listaClienteAnt,List<LibroDto> listaLibroAnt,List<PrestamoDto> listaPrestamoAnt)
+        {
+            int opcionS;
+            bool cerrarMenuB = false;
+            ClienteInterfaz ci = new ClienteImplementacion();
+            LibroInterfaz li = new LibroImplementacion();
+            PrestamoInterfaz pi = new PrestamoImplementacion();
+
+            while (!cerrarMenuB)
+            {
+                opcionS = mostrarMenuYseleccionSec();
+
+                switch (opcionS)
+                {
+
+                }
             }
         }
     }
