@@ -8,5 +8,7 @@ namespace ejercicio1Global.Servicios
 {
     internal class PrestamoImplementacion:PrestamoInterfaz
     {
+
+
     }
 }

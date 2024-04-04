@@ -10,8 +10,12 @@ namespace ejercicio1Global.Controladores
             MenuInterfaz mi=new MenuImplementacion();
             BibliotecaInterfaz bi=new BibliotecaImplementacion();
             List < BibliotecaDto > listaBiblioteca= new List<BibliotecaDto>();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            List<LibroDto> listaLibros=new List<LibroDto>();
+            List<PrestamoDto> listaPrestamos= new List<PrestamoDto>();
             bool cerrarMenu = false;
             int opcion;
+            
 
             while (!cerrarMenu)
             {
@@ -25,7 +29,7 @@ namespace ejercicio1Global.Controladores
                         break;
 
                     case 1:
-                        Console.WriteLine("[INFO] se Creada una biblioteca");
+                        Console.WriteLine("[INFO] se Creara una biblioteca");
                         bi.crearBiblioteca(listaBiblioteca);
                         break;
 
@@ -39,6 +43,7 @@ namespace ejercicio1Global.Controladores
 
                     case 3:
                         Console.WriteLine("[INFO] se accedera al menu de la biblioteca");
+                        mi.menuBiblioteca(listaClientes,listaLibros,listaPrestamos);
                         break;
                 }
             }

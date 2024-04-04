@@ -45,5 +45,16 @@ namespace ejercicio1Global.Dtos
             this.fchInicioSus = fchInicioSus;
             this.fchFinSus = fchFinSus;
         }
+
+        //ToString
+
+        override
+            public string ToString()
+        {
+            string texto = "ID: "+this.idCliente+"\n Nombre: "+this.nombreCliente+"\n Apellidos: "+"\n Fecha de nacimiento: "+this.fechaNacimiento+
+                "Dni: "+this.dniCliente;
+
+            return texto;
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace ejercicio1Global.Servicios
             Console.WriteLine("0. Salir del menu");
             Console.WriteLine("1. Crear Cliente");
             Console.WriteLine("2. Crear Libro");
-            Console.WriteLine("2. Crear Prestamo");
+            Console.WriteLine("3. Crear Prestamo");
             Console.WriteLine("###################");
             Console.WriteLine("Elija una opcion: ");
             opcion = Console.ReadKey(true).KeyChar - ('0');
@@ -100,7 +100,25 @@ namespace ejercicio1Global.Servicios
 
                 switch (opcionS)
                 {
+                    case 0:
+                        Console.WriteLine("[INFO] se cerrara el menu de la biblioteca");
+                        cerrarMenuB = true;
+                        break;
 
+                    case 1:
+                        Console.WriteLine("[INFO] se creara un cliente");
+                        ci.crearCliente(listaClienteAnt);
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        break;
+
+                    default:
+                        Console.WriteLine("Opcion introducida no valida");
+                        break;
                 }
             }
         }
