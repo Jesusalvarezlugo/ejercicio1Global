@@ -111,9 +111,12 @@ namespace ejercicio1Global.Servicios
                         break;
 
                     case 2:
+                        Console.WriteLine("[INFO] se creara un libro");
+                        li.crearLibro(listaLibroAnt);
                         break;
 
                     case 3:
+                        Console.WriteLine("[INFO] se creara un prestamo");
                         break;
 
                     default:
