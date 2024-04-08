@@ -14,13 +14,7 @@ namespace ejercicio1Global.Servicios
             throw new NotImplementedException();
         }
 
-        private PrestamoDto nuevoPrestamo()
-        {
-            PrestamoDto prestamoNuevo = new PrestamoDto();
-
-            Console.WriteLine("Introduzca el id del libro: ");
-            prestamoNuevo.IdLibro=
-        }
+        
 
        
     }
