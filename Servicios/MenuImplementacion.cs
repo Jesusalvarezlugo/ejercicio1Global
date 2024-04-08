@@ -107,12 +107,25 @@ namespace ejercicio1Global.Servicios
 
                     case 1:
                         Console.WriteLine("[INFO] se creara un cliente");
+                        ci.validarBiblioteca(listaClienteAnt);
                         ci.crearCliente(listaClienteAnt);
+
+                        foreach(ClienteDto cliente in listaClienteAnt)
+                        {
+                            Console.WriteLine(cliente.ToString());
+                        }
                         break;
 
                     case 2:
                         Console.WriteLine("[INFO] se creara un libro");
+                        li.validarIsbn(listaLibroAnt);
                         li.crearLibro(listaLibroAnt);
+
+                        foreach(LibroDto libro in listaLibroAnt)
+                        {
+                            Console.WriteLine(libro.ToString());
+                        }
+
                         break;
 
                     case 3:

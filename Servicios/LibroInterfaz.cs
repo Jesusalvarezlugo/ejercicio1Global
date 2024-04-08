@@ -10,5 +10,7 @@ namespace ejercicio1Global.Servicios
     internal interface LibroInterfaz
     {
         public void crearLibro(List<LibroDto> listaAntiguaLib);
+
+        public void validarIsbn(List<LibroDto> listaAntiguaLib);
     }
 }

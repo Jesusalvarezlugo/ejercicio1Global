@@ -16,6 +16,7 @@ namespace ejercicio1Global.Dtos
         DateTime fchPrestamo;
         DateTime fchEntrega;
         string estadoPrestamo = "aaaaa";
+        long idBiblio;
 
         
 
@@ -26,6 +27,7 @@ namespace ejercicio1Global.Dtos
         public DateTime FchPrestamo { get => fchPrestamo; set => fchPrestamo = value; }
         public DateTime FchEntrega { get => fchEntrega; set => fchEntrega = value; }
         public string EstadoPrestamo { get => estadoPrestamo; set => estadoPrestamo = value; }
+        public long IdBiblio { get => idBiblio; set => idBiblio = value; }
 
         //Constructores
 
@@ -33,7 +35,7 @@ namespace ejercicio1Global.Dtos
         {
 
         }
-        public PrestamoDto(long idPrestamo, long idLibro, long idCliente, DateTime fchPrestamo, DateTime fchEntrega, string estadoPrestamo)
+        public PrestamoDto(long idPrestamo, long idLibro, long idCliente, DateTime fchPrestamo, DateTime fchEntrega, string estadoPrestamo, long idBiblio)
         {
             this.idPrestamo = idPrestamo;
             this.idLibro = idLibro;
@@ -41,6 +43,8 @@ namespace ejercicio1Global.Dtos
             this.fchPrestamo = fchPrestamo;
             this.fchEntrega = fchEntrega;
             this.estadoPrestamo = estadoPrestamo;
+            this.idBiblio = idBiblio;
+            this.IdBiblio = idBiblio;
         }
     }
 }

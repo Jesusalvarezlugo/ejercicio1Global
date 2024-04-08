@@ -14,9 +14,10 @@ namespace ejercicio1Global.Dtos
         string tituloLibro = "aaaaa";
         string subtituloLibro = "aaaaa";
         string autorLibro = "aaaaa";
-        string ISBN = "aaaaa";
+        string iSBN = "aaaaa";
         string editorialLibro = "aaaaa";
         int stockLibro=0;
+        long idBiblio;
 
         
 
@@ -25,9 +26,10 @@ namespace ejercicio1Global.Dtos
         public string TituloLibro { get => tituloLibro; set => tituloLibro = value; }
         public string SubtituloLibro { get => subtituloLibro; set => subtituloLibro = value; }
         public string AutorLibro { get => autorLibro; set => autorLibro = value; }
-        public string ISBN1 { get => ISBN; set => ISBN = value; }
+        public string ISBN1 { get => iSBN; set => iSBN = value; }
         public string EditorialLibro { get => editorialLibro; set => editorialLibro = value; }
         public int StockLibro { get => stockLibro; set => stockLibro = value; }
+        public long IdBiblio { get => idBiblio; set => idBiblio = value; }
 
         //Constructores
 
@@ -35,15 +37,26 @@ namespace ejercicio1Global.Dtos
         {
 
         }
-        public LibroDto(long idLibro, string tituloLibro, string subtituloLibro, string autorLibro, string iSBN, string editorialLibro, int stockLibro)
+        public LibroDto(long idLibro, string tituloLibro, string subtituloLibro, string autorLibro, string iSBN, string editorialLibro, int stockLibro,long idBiblio)
         {
             this.idLibro = idLibro;
             this.tituloLibro = tituloLibro;
             this.subtituloLibro = subtituloLibro;
             this.autorLibro = autorLibro;
-            ISBN = iSBN;
+            this.iSBN = iSBN;
             this.editorialLibro = editorialLibro;
             this.stockLibro = stockLibro;
+            this.idBiblio = idBiblio;
+        }
+
+        //Metodo toString
+
+        override
+            public string ToString()
+        {
+            string texto = "ID: "+this.idLibro+"\nTitulo: "+this.tituloLibro+"\nISBN: "+this.iSBN+"\niDBiblioteca: "+this.idBiblio;
+
+            return texto;
         }
     }
 }

@@ -49,5 +49,25 @@ namespace ejercicio1Global.Servicios
             }
             return nuevoId;
         }
+        
+        public void validarIsbn(List<LibroDto> listaAntiguaLib)
+        {
+            string ibsnAPedir;
+
+            Console.WriteLine("Introduzca el ISBN: ");
+            ibsnAPedir = Console.ReadLine();
+
+            for(int i = 0; i < listaAntiguaLib.Count; i++)
+            {
+                if (ibsnAPedir.Equals(listaAntiguaLib[i].ISBN1))
+                {
+                    listaAntiguaLib[i].ISBN1=ibsnAPedir;
+                    break;
+                }
+                              
+            }
+            Console.WriteLine("El IBSN es correcto.");
+          
+        }
     }
 }

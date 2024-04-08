@@ -21,6 +21,7 @@ namespace ejercicio1Global.Servicios
         {
             ClienteDto cliente = new ClienteDto();
             string fechaNacimiento;
+            int numDni;
 
             Console.WriteLine("Introduzca el nombre del cliente: ");
             cliente.NombreCliente = Console.ReadLine();
@@ -29,8 +30,11 @@ namespace ejercicio1Global.Servicios
             Console.WriteLine("Introduzca la fecha de nacimiento del cliente: ");
             fechaNacimiento = Console.ReadLine();
             cliente.FechaNacimiento=Convert.ToDateTime(fechaNacimiento);
-            Console.WriteLine("Introduzca el dni del cliente: ");
-            cliente.DniCliente = Console.ReadLine();
+            Console.WriteLine("Introduzca el numero del dni: ");
+            numDni=Int32.Parse(Console.ReadLine());
+            cliente.DniCliente=dniCompleto(numDni);
+            Console.WriteLine("Introduzca el id de la biblioteca donde crear el cliente: ");
+            cliente.IdBiblio=Int64.Parse(Console.ReadLine());
 
             return cliente;
         }
@@ -48,6 +52,131 @@ namespace ejercicio1Global.Servicios
                 nuevoId = 1;
             }
             return nuevoId;
+        }
+
+        private string dniCompleto(int numDni)
+        {
+            char letraDni = 't';
+            switch (numDni % 23)
+            {
+                case 0:
+                    letraDni = 'T';
+                    break;
+
+                case 1:
+                    letraDni = 'R';
+                    break;
+
+                case 2:
+                    letraDni = 'W';
+                    break;
+
+                case 3:
+                    letraDni = 'A';
+                    break;
+
+                case 4:
+                    letraDni = 'G';
+                    break;
+
+                case 5:
+                    letraDni = 'M';
+                    break;
+
+                case 6:
+                    letraDni = 'Y';
+                    break;
+
+                case 7:
+                    letraDni = 'F';
+                    break;
+
+                case 8:
+                    letraDni = 'P';
+                    break;
+
+                case 9:
+                    letraDni = 'D';
+                    break;
+
+                case 10:
+                    letraDni = 'X';
+                    break;
+
+                case 11:
+                    letraDni = 'B';
+                    break;
+
+                case 12:
+                    letraDni = 'N';
+                    break;
+
+                case 13:
+                    letraDni = 'J';
+                    break;
+
+                case 14:
+                    letraDni = 'Z';
+                    break;
+
+                case 15:
+                    letraDni = 'S';
+                    break;
+
+                case 16:
+                    letraDni = 'Q';
+                    break;
+
+                case 17:
+                    letraDni = 'V';
+                    break;
+
+                case 18:
+                    letraDni = 'H';
+                    break;
+
+                case 19:
+                    letraDni = 'L';
+                    break;
+
+                case 20:
+                    letraDni = 'C';
+                    break;
+
+                case 21:
+                    letraDni = 'K';
+                    break;
+
+                case 22:
+                    letraDni = 'E';
+                    break;
+
+                default:
+                    Console.WriteLine("ERROR! numero fuera de rango");
+                    break;
+            }
+
+            string dniCompleto = numDni + "-" + letraDni;
+
+            return dniCompleto;
+        }
+
+        public void validarBiblioteca(List<ClienteDto> listaAntiguaCli)
+        {
+            long idBiblioteca;
+            Console.WriteLine("Introduce el id de la biblioteca donde desee crear el cliente: ");
+            idBiblioteca = Int64.Parse(Console.ReadLine());
+
+            for(int i=0;i<listaAntiguaCli.Count;i++)
+            {
+                if (idBiblioteca.Equals(listaAntiguaCli[i].IdBiblio))
+                {
+                    listaAntiguaCli[i].IdBiblio = idBiblioteca;
+                    break;
+                }
+            }
+
+            Console.WriteLine("El id de la biblioteca es el correcto.");
         }
     }
 }

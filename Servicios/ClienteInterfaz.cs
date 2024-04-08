@@ -10,5 +10,7 @@ namespace ejercicio1Global.Servicios
     internal interface ClienteInterfaz
     {
         public void crearCliente(List<ClienteDto> listaAntiguaCli);
+
+        public void validarBiblioteca(List<ClienteDto> listaAntiguaCli);
     }
 }

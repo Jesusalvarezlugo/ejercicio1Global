@@ -17,6 +17,7 @@ namespace ejercicio1Global.Dtos
         string dniCliente = "aaaaa";
         DateTime fchInicioSus;
         DateTime fchFinSus;
+        long idBiblio;
 
         
 
@@ -28,6 +29,7 @@ namespace ejercicio1Global.Dtos
         public string DniCliente { get => dniCliente; set => dniCliente = value; }
         public DateTime FchInicioSus { get => fchInicioSus; set => fchInicioSus = value; }
         public DateTime FchFinSus { get => fchFinSus; set => fchFinSus = value; }
+        public long IdBiblio { get => idBiblio; set => idBiblio = value; }
 
         //Constructores
 
@@ -35,7 +37,7 @@ namespace ejercicio1Global.Dtos
         {
 
         }
-        public ClienteDto(long idCliente, string nombreCliente, string apellidosCliente, DateTime fechaNacimiento, string dniCliente, DateTime fchInicioSus, DateTime fchFinSus)
+        public ClienteDto(long idCliente, string nombreCliente, string apellidosCliente, DateTime fechaNacimiento, string dniCliente, DateTime fchInicioSus, DateTime fchFinSus,long idBiblio)
         {
             this.idCliente = idCliente;
             this.nombreCliente = nombreCliente;
@@ -44,6 +46,7 @@ namespace ejercicio1Global.Dtos
             this.dniCliente = dniCliente;
             this.fchInicioSus = fchInicioSus;
             this.fchFinSus = fchFinSus;
+            this.idBiblio = idBiblio;
         }
 
         //ToString
@@ -51,8 +54,8 @@ namespace ejercicio1Global.Dtos
         override
             public string ToString()
         {
-            string texto = "ID: "+this.idCliente+"\n Nombre: "+this.nombreCliente+"\n Apellidos: "+"\n Fecha de nacimiento: "+this.fechaNacimiento+
-                "Dni: "+this.dniCliente;
+            string texto = "ID: "+this.idCliente+"\n Nombre: "+this.nombreCliente+"\n Apellidos: "+this.apellidosCliente+"\n Fecha de nacimiento: "+this.fechaNacimiento+
+                "Dni: "+this.dniCliente+"\nIdBiblioteca: "+this.idBiblio;
 
             return texto;
         }
