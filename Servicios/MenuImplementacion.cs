@@ -130,6 +130,11 @@ namespace ejercicio1Global.Servicios
 
                     case 3:
                         Console.WriteLine("[INFO] se creara un prestamo");
+                        pi.crearPrestamo(listaPrestamoAnt);
+                        foreach(PrestamoDto prestamo in listaPrestamoAnt)
+                        {
+                            Console.Write(prestamo.ToString());
+                        }
                         break;
 
                     default:

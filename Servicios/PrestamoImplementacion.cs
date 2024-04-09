@@ -14,8 +14,7 @@ namespace ejercicio1Global.Servicios
             ClienteDto cliente = new ClienteDto();
             LibroDto libro = new LibroDto();
             PrestamoDto prestamo = new PrestamoDto();
-            BibliotecaDto biblioteca = new BibliotecaDto();
-            string nombreLibro;
+            BibliotecaDto biblioteca = new BibliotecaDto();           
             long idCliente;
             long idLibro;
             long idBiblioteca;
@@ -46,6 +45,7 @@ namespace ejercicio1Global.Servicios
 
            prestamo.FchPrestamo=DateTime.Now;
            prestamo.FchEntrega = prestamo.FchPrestamo.AddDays(8);
+           prestamo.EstadoPrestamo = "En proceso";
 
             listaAntiguaPres.Add(prestamo);
 

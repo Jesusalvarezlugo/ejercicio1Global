@@ -5,6 +5,7 @@ namespace ejercicio1Global.Controladores
 {
     class Program
     {
+        public static long idBibliotecaSeleccionada;
         static void Main(string[] args)
         {
             MenuInterfaz mi=new MenuImplementacion();

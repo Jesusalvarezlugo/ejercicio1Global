@@ -44,7 +44,16 @@ namespace ejercicio1Global.Dtos
             this.fchEntrega = fchEntrega;
             this.estadoPrestamo = estadoPrestamo;
             this.idBiblio = idBiblio;
-            this.IdBiblio = idBiblio;
+            
+        }
+
+        override
+            public string ToString()
+        {
+            string texto ="ID prestamo: "+this.idPrestamo+"\nID cliente: "+this.idCliente+"\nID libro: "+this.idLibro+"\nfecha prestamo: "+this.fchPrestamo
+                +"\n fecha entrega: "+this.fchEntrega+"\n Estado prestamo: "+this.estadoPrestamo;
+
+            return texto;
         }
     }
 }

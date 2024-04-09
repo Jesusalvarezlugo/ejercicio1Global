@@ -175,6 +175,11 @@ namespace ejercicio1Global.Servicios
                     listaAntiguaCli[i].IdBiblio = idBiblioteca;
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("No se encuentra la biblioteca.");
+                    break;
+                }
             }
 
             Console.WriteLine("El id de la biblioteca es el correcto.");
