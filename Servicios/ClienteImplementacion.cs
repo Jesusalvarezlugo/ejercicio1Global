@@ -55,6 +55,7 @@ namespace ejercicio1Global.Servicios
         }
 
         private string dniCompleto(int numDni)
+
         {
             char letraDni = 't';
             switch (numDni % 23)
