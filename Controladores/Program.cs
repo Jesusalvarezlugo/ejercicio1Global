@@ -16,6 +16,8 @@ namespace ejercicio1Global.Controladores
             List<PrestamoDto> listaPrestamos= new List<PrestamoDto>();
             bool cerrarMenu = false;
             int opcion;
+
+            //leer ficheros y guardar en listas
             
 
             while (!cerrarMenu)
@@ -26,6 +28,7 @@ namespace ejercicio1Global.Controladores
                 {
                     case 0:
                         Console.WriteLine("[INFO] se cerrara el menu.");
+                        //Guardar en ficheros
                         cerrarMenu = true;
                         break;
 
@@ -45,6 +48,9 @@ namespace ejercicio1Global.Controladores
                     case 3:
                         Console.WriteLine("[INFO] se accedera al menu de la biblioteca");
                         mi.menuBiblioteca(listaClientes,listaLibros,listaPrestamos);
+                        break;
+
+                    default:
                         break;
                 }
             }
