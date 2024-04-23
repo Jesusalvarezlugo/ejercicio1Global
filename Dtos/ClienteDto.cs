@@ -13,7 +13,7 @@ namespace ejercicio1Global.Dtos
         long idCliente;
         string nombreCliente = "aaaaa";
         string apellidosCliente = "aaaaa";
-        DateTime fechaNacimiento;
+        DateTime fechaNacimiento=31/12/9999 00:00:00;
         string dniCliente = "aaaaa";
         DateTime fchInicioSus;
         DateTime fchFinSus;
