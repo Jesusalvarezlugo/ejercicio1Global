@@ -86,7 +86,7 @@ namespace ejercicio1Global.Servicios
             }
         }
 
-        public void menuBiblioteca(List<ClienteDto> listaClienteAnt,List<LibroDto> listaLibroAnt,List<PrestamoDto> listaPrestamoAnt)
+        public void menuBiblioteca(List<ClienteDto> listaClienteAnt,List<LibroDto> listaLibroAnt,List<PrestamoDto> listaPrestamoAnt,List<BibliotecaDto> listaAntiguaBib)
         {
             int opcionS;
             bool cerrarMenuB = false;
@@ -107,8 +107,8 @@ namespace ejercicio1Global.Servicios
 
                     case 1:
                         Console.WriteLine("[INFO] se creara un cliente");
-                        ci.validarBiblioteca(listaClienteAnt);
-                        ci.crearCliente(listaClienteAnt);
+                        
+                        ci.crearCliente(listaClienteAnt,listaAntiguaBib);
 
                         foreach(ClienteDto cliente in listaClienteAnt)
                         {

@@ -47,10 +47,11 @@ namespace ejercicio1Global.Controladores
 
                     case 3:
                         Console.WriteLine("[INFO] se accedera al menu de la biblioteca");
-                        mi.menuBiblioteca(listaClientes,listaLibros,listaPrestamos);
+                        mi.menuBiblioteca(listaClientes,listaLibros,listaPrestamos,listaBiblioteca);
                         break;
 
                     default:
+                        Console.WriteLine("Opcion elegida erronea");
                         break;
                 }
             }

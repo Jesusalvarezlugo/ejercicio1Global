@@ -9,12 +9,21 @@ namespace ejercicio1Global.Servicios
 {
     internal class ClienteImplementacion : ClienteInterfaz
     {
-        public void crearCliente(List<ClienteDto> listaAntiguaCli)
+        public void crearCliente(List<ClienteDto> listaAntiguaCli,List<BibliotecaDto> listaAntiguaB)
         {
             ClienteDto clienteNuevo = nuevoCliente();
             clienteNuevo.IdCliente = autoIdC(listaAntiguaCli);
 
-            listaAntiguaCli.Add(clienteNuevo);
+            if(validarBiblioteca1(clienteNuevo.IdBiblio,listaAntiguaB))
+            {
+                listaAntiguaCli.Add(clienteNuevo);
+            }
+            else
+            {
+                Console.WriteLine("No existe la biblioteca.");
+            }
+            
+            
         }
 
         private ClienteDto nuevoCliente()
@@ -35,8 +44,11 @@ namespace ejercicio1Global.Servicios
             cliente.DniCliente=dniCompleto(numDni);
             Console.WriteLine("Introduzca el id de la biblioteca donde crear el cliente: ");
             cliente.IdBiblio=Int64.Parse(Console.ReadLine());
-
-            return cliente;
+           
+           
+                return cliente;
+                
+                                                         
         }
 
         private long autoIdC(List<ClienteDto> listaAntiguaCli)
@@ -162,27 +174,30 @@ namespace ejercicio1Global.Servicios
             return dniCompleto;
         }
 
-        public void validarBiblioteca(List<ClienteDto> listaAntiguaCli)
-        {
-            long idBiblioteca;
-            Console.WriteLine("Introduce el id de la biblioteca donde desee crear el cliente: ");
-            idBiblioteca = Int64.Parse(Console.ReadLine());
+        
 
-            for(int i=0;i<listaAntiguaCli.Count;i++)
+        private bool validarBiblioteca1(long idBiblioteca, List<BibliotecaDto> listaAntiguaBib)
+        {
+            bool hayBiblioteca = false;
+            ClienteDto cliente = new ClienteDto();
+
+            for(int i =0;i< listaAntiguaBib.Count;i++)
             {
-                if (idBiblioteca.Equals(listaAntiguaCli[i].IdBiblio))
+                if (idBiblioteca == listaAntiguaBib[i].IdBiblioteca)
                 {
-                    listaAntiguaCli[i].IdBiblio = idBiblioteca;
-                    break;
+                    idBiblioteca = cliente.IdBiblio;
+                    hayBiblioteca=true;
+                    
                 }
                 else
                 {
-                    Console.WriteLine("No se encuentra la biblioteca.");
+                    Console.WriteLine("La biblioteca no existe.");
                     break;
                 }
             }
+            
 
-            Console.WriteLine("El id de la biblioteca es el correcto.");
+            return hayBiblioteca;
         }
     }
 }
