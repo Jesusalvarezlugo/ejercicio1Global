@@ -181,20 +181,29 @@ namespace ejercicio1Global.Servicios
             bool hayBiblioteca = false;
             ClienteDto cliente = new ClienteDto();
 
-            for(int i =0;i< listaAntiguaBib.Count;i++)
+            try
             {
-                if (idBiblioteca == listaAntiguaBib[i].IdBiblioteca)
+                for (int i = 0; i < listaAntiguaBib.Count; i++)
                 {
-                    idBiblioteca = cliente.IdBiblio;
-                    hayBiblioteca=true;
-                    
-                }
-                else
-                {
-                    Console.WriteLine("La biblioteca no existe.");
-                    break;
+                    if (idBiblioteca == listaAntiguaBib[i].IdBiblioteca)
+                    {
+                        idBiblioteca = cliente.IdBiblio;
+                        hayBiblioteca = true;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("La biblioteca no existe.");
+                        break;
+                    }
                 }
             }
+            catch(Exception e)
+            {
+                throw new Exception("Este es un mensaje de error.");
+            }
+
+            
             
 
             return hayBiblioteca;
